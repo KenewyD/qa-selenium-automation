@@ -2,7 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 
-driver = webdriver.Edge()
+options = webdriver.ChromeOptions()
+options.add_argument("--headless=new")
+options.add_argument("--no-sandbox")
+options.add_argument("--disable-dev-shm-usage")
+
+driver = webdriver.Chrome(options=options)
 
 driver.get("https://the-internet.herokuapp.com/login")
 
